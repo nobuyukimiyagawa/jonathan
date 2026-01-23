@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recruit | 株式会社ヨナタン</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Google Fonts: Inter & Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <div class="splash-content">
+      <p class="splash-text">Building the future together.</p>
+    </div>
+  </div>
+
+  <!-- Header: Transparent, Fixed -->
+  <header class="site-header">
+    <div class="container header-container">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="assets/images/logo.png?v=3" alt="JONATHAN" height="40">
+        </a>
+      </h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Top</a></li>
+          <li><a href="company.html">Company</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="recruit.html" class="active">Recruit</a></li>
+          <li><a href="inquiry.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fixed Background Canvas -->
+  <div id="canvas-container"></div>
+
+  <!-- Hero Section: Static for Subpage -->
+  <section class="hero recruit-hero">
+    <div class="container hero-container">
+      <h2 class="hero-title">RECRUIT</h2>
+      <p class="hero-desc">共に未来を実装する仲間を募集しています。</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="content">
+    <div class="container">
+
+      <!-- Message Section -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Message</h2>
+        </div>
+        <div class="message-content">
+          <h3 class="message-heading">"Living" and "Building" integrated.</h3>
+          <p class="message-text">
+            私たちは、現場に一番強いオペレーションコンサルティング会社です。<br>
+            社会システムを再構築し、より良い未来を実装するために、<br>
+            情熱を持って課題に取り組める仲間を探しています。
+          </p>
+        </div>
+      </section>
+
+      <!-- Positions Section -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Open Positions</h2>
+        </div>
+        <div class="job-list">
+          <!-- Job Item 1 -->
+          <div class="job-item">
+            <h3 class="job-title">Operations Consultant</h3>
+            <p class="job-category">Mid-Career / New Graduate</p>
+            <p class="job-desc">物流・サプライチェーン領域を中心とした、現場改善から戦略立案までを一貫して行うコンサルタント。</p>
+            <a href="#" class="cta-button small">Read More</a>
+          </div>
+
+          <!-- Job Item 2 -->
+          <div class="job-item">
+            <h3 class="job-title">Software Engineer</h3>
+            <p class="job-category">Mid-Career</p>
+            <p class="job-desc">自社プロダクトおよびクライアント向けソリューションの開発。</p>
+            <a href="#" class="cta-button small">Read More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Entry Section -->
+      <section class="section entry-section">
+        <div class="entry-box">
+          <h2 class="entry-title">Entry</h2>
+          <p>まずはカジュアルにお話ししませんか？</p>
+          <a href="inquiry.html" class="cta-button">Contact Form</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 株式会社ヨナタン. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
