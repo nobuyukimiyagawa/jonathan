@@ -62,10 +62,14 @@ let randomPositions;   // Start positions (Scattered)
 let renderer;
 let scene;
 let camera;
+let isHomePage = false;
 
 function initThreeJS() {
   const container = document.getElementById('canvas-container');
   if (!container) return;
+
+  // Check if we are on the homepage (based on hero-scroll-wrapper existence)
+  isHomePage = !!document.querySelector('.hero-scroll-wrapper');
 
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -142,15 +146,22 @@ function animate() {
 
   if (!sphereLines || !spherePoints) return;
 
-  const scrollY = window.scrollY;
-  // Morph completes by 2.0 screen heights (scroll = 2 * h)
-  // Hero is 3.5h, Content appears at ~3.5h.
-  // This leaves 1.5h of "Formed Sphere" state before content arrives.
-  const animationDuration = window.innerHeight * 2.0;
-  const rawProgress = Math.min(Math.max(scrollY / animationDuration, 0), 1);
+  let progress = 0;
 
-  // Ease out the progress for smoother particle arrival
-  const progress = 1 - Math.pow(1 - rawProgress, 3);
+  if (isHomePage) {
+    const scrollY = window.scrollY;
+    // Morph completes by 2.0 screen heights (scroll = 2 * h)
+    // Hero is 3.5h, Content appears at ~3.5h.
+    // This leaves 1.5h of "Formed Sphere" state before content arrives.
+    const animationDuration = window.innerHeight * 2.0;
+    const rawProgress = Math.min(Math.max(scrollY / animationDuration, 0), 1);
+
+    // Ease out the progress for smoother particle arrival
+    progress = 1 - Math.pow(1 - rawProgress, 3);
+  } else {
+    // If not homepage, always show fully formed sphere
+    progress = 1;
+  }
 
   // --- Morph Logic ---
   const positions = sphereLines.geometry.attributes.position.array;
@@ -176,6 +187,7 @@ function animate() {
   spherePoints.rotation.y = time;
 
   // Scroll rotation boost
+  const scrollY = window.scrollY;
   sphereLines.rotation.x = scrollY * 0.0005;
   spherePoints.rotation.x = scrollY * 0.0005;
 
