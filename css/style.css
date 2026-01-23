@@ -532,3 +532,252 @@ a {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Recruit Page Styles */
+
+/* Recruit Hero Override */
+.recruit-hero {
+  height: 60vh !important;
+  /* Override the 350vh from main hero */
+  min-height: 400px;
+  justify-content: center;
+  /* Center content */
+  align-items: center;
+  text-align: center;
+}
+
+.recruit-hero .hero-title {
+  color: #262523;
+}
+
+/* Message Section */
+.message-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.message-heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.message-text {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #666;
+}
+
+/* Job List */
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.job-item {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #262523;
+  /* Accent */
+}
+
+.job-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.job-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.job-category {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #999;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+.job-desc {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.cta-button.small {
+  padding: 0.6rem 2rem;
+  font-size: 0.9rem;
+}
+
+/* Entry Section */
+.entry-section {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.entry-box {
+  background-color: #e0ded8;
+  /* Match tease bg */
+  padding: 4rem 2rem;
+  border-radius: 12px;
+}
+
+.entry-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.entry-box p {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  padding-top: 2rem;
+}
+
+.philosophy-block {
+  margin-bottom: 6rem;
+}
+
+.philosophy-list {
+  list-style: none;
+  font-size: 1.1rem;
+  line-height: 2.2;
+  color: #262523;
+  margin-top: 1rem;
+  padding-left: 2rem;
+  border-left: 1px solid #ddd;
+}
+
+.vision-heading,
+.mission-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #262523;
+  line-height: 1.6;
+}
+
+.vision-list,
+.mission-list {
+  list-style: none;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-top: 1rem;
+}
+
+.vision-list li,
+.mission-list li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.vision-list li::before,
+.mission-list li::before {
+  content: "・";
+  margin-right: 0.5rem;
+}
+
+/* Service Details in Card */
+.service-details {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #eee;
+  display: none;
+  /* Hidden by default, show on hover maybe? or just always show if height allows */
+  display: block;
+  /* Let's show it for now */
+}
+
+.service-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-details li {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.service-details li::before {
+  content: "- ";
+}
+
+/* Adjust Service Card Height for more content */
+.vuild-card {
+  height: auto;
+  /* Allow growth */
+  min-height: 380px;
+}
+
+/* Grid Layout for 6 items */
+.services-grid {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* Company Overview */
+.company-overview {
+  padding-bottom: 6rem;
+}
+
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.company-table th,
+.company-table td {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.company-table th {
+  width: 30%;
+  font-weight: 500;
+  color: #262523;
+}
+
+.company-table td {
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Adjust for mobile */
+@media (max-width: 768px) {
+
+  .company-table th,
+  .company-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .company-table th {
+    padding-bottom: 0.5rem;
+    border-bottom: none;
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  .company-table td {
+    padding-top: 0;
+  }
+}
