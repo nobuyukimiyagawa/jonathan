@@ -27,22 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     scrollY = window.scrollY;
 
-    // --- Text Switching Logic ---
-    if (slide1 && slide2) {
-      if (scrollY > switchThreshold) {
-        // Switch to Slide 2
-        slide1.classList.remove('visible');
-        slide1.classList.add('hidden');
-        slide2.classList.remove('hidden');
-        slide2.classList.add('visible');
-      } else {
-        // Revert to Slide 1
-        slide2.classList.remove('visible');
-        slide2.classList.add('hidden');
-        slide1.classList.remove('hidden');
-        slide1.classList.add('visible');
-      }
-    }
+    // Scroll Event
+    // ... existing scroll logic ...
 
     // --- Content Fade-in Logic (for non-hero elements) ---
     document.querySelectorAll('.card').forEach(el => {
@@ -52,6 +38,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // --- Hamburger Menu Logic ---
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu-overlay');
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+  }
 });
 
 // Three.js Logic
@@ -72,17 +77,24 @@ function initThreeJS() {
   isHomePage = !!document.querySelector('.hero-scroll-wrapper');
 
   scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 5;
+  // Use container dimensions to avoid scrollbar aspect ratio mismatch
+  // Use container dimensions to avoid scrollbar aspect ratio mismatch
+  const width = container.clientWidth;
+  const height = container.clientHeight;
+
+  // Reduce FOV to 45 (Telephoto) to minimize perspective distortion at edges
+  camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+  camera.position.z = 8.5; // Move back to maintain scale
 
   renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(width, height);
   renderer.setPixelRatio(window.devicePixelRatio);
   container.appendChild(renderer.domElement);
 
   // --- Geometry Setup ---
   // High detail Icosahedron for more particles
-  const baseGeometry = new THREE.IcosahedronGeometry(3, 2);
+  // Reverted to ORIGINAL size (Radius 3) for HomePage
+  const baseGeometry = new THREE.IcosahedronGeometry(3.0, 2);
   const count = baseGeometry.attributes.position.count;
 
   // Store original (target) positions
@@ -102,14 +114,6 @@ function initThreeJS() {
   geometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(randomPositions), 3));
 
   // --- 1. Lines (Wireframe) ---
-  // Convert Icosahedron to LineSegments geometry logic roughly or just use Wireframe on Mesh?
-  // Mesh is easier for Wireframe, but we need to share the transformed buffer.
-  // We can create a Mesh and update its geometry.position too.
-
-  // Actually, simplest way: Just use POINTS and LINES as separate objects sharing the SAME attributes?
-  // No, LineSegments expects index-based topology. IcosahedronGeometry has it.
-
-  // Let's copy the Index from baseGeometry
   geometry.setIndex(baseGeometry.getIndex());
 
   // Material for Wireframe (Hidden initially)
@@ -131,6 +135,21 @@ function initThreeJS() {
   });
   spherePoints = new THREE.Points(geometry, pointMaterial);
   scene.add(spherePoints);
+
+  // Position Adjustment
+  if (!isHomePage) {
+    sphereLines.position.y = 0.8;
+    spherePoints.position.y = 0.8;
+    sphereLines.position.x = 2.5;
+    spherePoints.position.x = 2.5;
+
+    // Subpage Specific Scale (Target Radius ~1.9)
+    // 1.9 / 3.0 = 0.6333...
+    const subPageScale = 0.633;
+    sphereLines.scale.set(subPageScale, subPageScale, subPageScale);
+    spherePoints.scale.set(subPageScale, subPageScale, subPageScale);
+  }
+
 
   // Animation Loop
   animate();
@@ -203,14 +222,14 @@ function animate() {
 }
 
 function onWindowResize() {
-  if (camera && renderer) {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    renderer.setSize(width, height);
+  const container = document.getElementById('canvas-container');
+  if (camera && renderer && container) {
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
-
-    // Recalculate Thresholds on resize if needed, though they use window.innerHeight dynamicallly
+    renderer.setSize(width, height);
   }
 }
 
