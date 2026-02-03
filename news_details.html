@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Details | 株式会社ヨナタン</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Google Fonts: Oswald (English Headings), Manrope (English Body), Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Specific styles for news details */
+        .news-header {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .news-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .news-detail-content {
+            line-height: 2;
+            color: #555;
+        }
+
+        .news-detail-content p {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header: Transparent, Fixed -->
+    <header class="site-header">
+        <div class="container header-container">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png?v=3" alt="JONATHAN" height="40">
+                </a>
+            </h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="news.html">NEWS</a></li>
+                    <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
+                    <li><a href="business.html">BUSINESS</a></li>
+                    <li><a href="company.html">COMPANY</a></li>
+                    <li><a href="#">RECRUIT<span class="external-icon"></span></a></li>
+                    <li><a href="contact.html" class="nav-btn-round">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Fixed Background Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Spacer for fixed header -->
+    <div style="height: 100px;"></div>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <article class="news-article">
+                <div class="news-header">
+                    <div class="news-meta">
+                        <span class="news-date">2026.02.03</span>
+                        <span class="news-category">Update</span>
+                    </div>
+                    <h1 class="section-title" style="font-size: 2.5rem;">ホームページリニューアル</h1>
+                </div>
+
+                <div class="news-detail-content">
+                    <p>
+                        株式会社ヨナタンのホームページをリニューアルいたしました。
+                    </p>
+                    <p>
+                        今回のリニューアルでは、より使いやすく、よりわかりやすいホームページを目指して、デザインやページの構成を見直しました。
+                        また、スマートフォンやタブレットでの表示にも対応し、幅広いデバイスからアクセスしていただけるようになりました。
+                    </p>
+                    <p>
+                        これまで以上に、お客様にお役に立つ情報の提供や、内容の充実に努めてまいります。
+                        今後とも株式会社ヨナタンをよろしくお願い申し上げます。
+                    </p>
+                </div>
+
+                <div style="margin-top: 4rem; text-align: center;">
+                    <a href="news.html" class="cta-button">Back to List</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><span aria-current="page">ホームページリニューアル</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 株式会社ヨナタン. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

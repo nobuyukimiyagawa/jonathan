@@ -6,22 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Company | 株式会社ヨナタン</title>
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Google Fonts: Inter & Noto Sans JP -->
+  <!-- Google Fonts: Oswald (English Headings), Manrope (English Body), Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;500;700&display=swap"
     rel="stylesheet">
 </head>
 
 <body>
-  <!-- Splash Screen -->
-  <div id="splash-screen">
-    <div class="splash-content">
-      <p class="splash-text">Building the future together.</p>
-    </div>
-  </div>
-
   <!-- Header: Transparent, Fixed -->
   <header class="site-header">
     <div class="container header-container">
@@ -32,11 +25,12 @@
       </h1>
       <nav class="main-nav">
         <ul>
-          <li><a href="index.html">Top</a></li>
-          <li><a href="company.html" class="active">Company</a></li>
-          <li><a href="service.html">Services</a></li>
-          <li><a href="recruit.html">Recruit</a></li>
-          <li><a href="inquiry.html">Contact</a></li>
+          <li><a href="news.html">NEWS</a></li>
+          <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
+          <li><a href="business.html">BUSINESS</a></li>
+          <li><a href="company.html">COMPANY</a></li>
+          <li><a href="#">RECRUIT<span class="external-icon"></span></a></li>
+          <li><a href="contact.html" class="nav-btn-round">CONTACT</a></li>
         </ul>
       </nav>
     </div>
@@ -59,96 +53,34 @@
 
 
       <!-- Philosophy / Vision / Mission Section -->
-      <section class="section philosophy-section">
+      <section class="section company-menu">
+        <div class="menu-grid">
+          <a href="company/philosophy.html" class="menu-card">
+            <h3 class="menu-title">Philosophy</h3>
+            <p class="menu-desc">企業理念</p>
+            <span class="arrow">→</span>
+          </a>
 
-        <!-- Philosophy -->
-        <div class="philosophy-block">
-          <div class="section-header">
-            <h2 class="section-title">Philosophy</h2>
-            <p class="section-desc">企業理念</p>
-          </div>
-          <div class="philosophy-content">
-            <ul class="philosophy-list">
-              <li>机上の空論ではなく、現場と数字で語る</li>
-              <li>部分最適ではなく、事業全体の最適化を追求する</li>
-              <li>戦略だけで終わらせず、実行と定着まで伴走する</li>
-              <li>流通・物流という社会インフラを、持続可能な形で次世代につなぐ</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Vision -->
-        <div class="philosophy-block">
-          <div class="section-header">
-            <h2 class="section-title">Vision</h2>
-            <p class="section-desc">ビジョン</p>
-          </div>
-          <div class="philosophy-content">
-            <h3 class="vision-heading">流通・物流において、「現場に一番強いオペレーションコンサルティング会社」になる</h3>
-            <ul class="vision-list">
-              <li>戦略・ファイナンス・ITだけでなく、現場オペレーションを本質的に理解しているプロフェッショナル集団</li>
-              <li>日本でも数少ない、オペレーション起点でM&A・事業再生まで担える会社</li>
-              <li>企業の成長と、現場で働く人の持続性を両立させる存在</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Mission -->
-        <div class="philosophy-block">
-          <div class="section-header">
-            <h2 class="section-title">Mission</h2>
-            <p class="section-desc">ミッション</p>
-          </div>
-          <div class="philosophy-content">
-            <h3 class="mission-heading">オペレーションから、企業と産業の競争力を高める</h3>
-            <ul class="mission-list">
-              <li>属人化・非効率・ブラックボックス化した物流を構造から見直す</li>
-              <li>現場・システム・経営をつなぎ、再現性のある仕組みをつくる</li>
-              <li>流通・物流を「コストセンター」から「競争力の源泉」へ変える</li>
-            </ul>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- Company Overview Section -->
-      <section class="section company-overview">
-        <div class="section-header">
-          <h2 class="section-title">Overview</h2>
-          <p class="section-desc">会社概要</p>
-        </div>
-        <div class="overview-content">
-          <table class="company-table">
-            <tr>
-              <th>会社名</th>
-              <td>株式会社ヨナタン (Jonathan Inc.)</td>
-            </tr>
-            <tr>
-              <th>設立</th>
-              <td>20xx年xx月xx日</td>
-            </tr>
-            <tr>
-              <th>代表取締役</th>
-              <td>山田 太郎</td>
-            </tr>
-            <tr>
-              <th>所在地</th>
-              <td>〒100-0000<br>東京都千代田区...</td>
-            </tr>
-            <tr>
-              <th>事業内容</th>
-              <td>
-                流通・物流オペレーションコンサルティング<br>
-                物流システム導入・開発支援<br>
-                M&A・事業再構築支援
-              </td>
-            </tr>
-          </table>
+          <a href="company/overview.html" class="menu-card">
+            <h3 class="menu-title">Overview</h3>
+            <p class="menu-desc">会社概要</p>
+            <span class="arrow">→</span>
+          </a>
         </div>
       </section>
 
     </div>
   </main>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="index.html">TOP</a></li>
+        <li><span aria-current="page">COMPANY</span></li>
+      </ol>
+    </div>
+  </nav>
 
   <!-- Footer -->
   <footer class="site-footer">
