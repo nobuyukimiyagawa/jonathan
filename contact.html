@@ -2,267 +2,330 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | ITL JAPAN株式会社</title>
-    <script>
-      (function(d) {
-        var config = {
-          kitId: "rqb6mhw",
-          scriptTimeout: 3000,
-          async: true
-        },
-        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src="https://use.typekit.net/"+config.kitId+".js";tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-      })(document);
-    </script>    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | 株式会社ヨナタン</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Google Fonts: Oswald (English Headings), Manrope (English Body), Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+    <style>
+        /* Contact Form Styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .submit-button {
+            background-color: #262523;
+            color: #fff;
+            border: 1px solid #262523;
+            padding: 1rem 3rem;
+            border-radius: 9999px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: transparent;
+            color: #262523;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Header: Transparent, Fixed -->
     <header class="site-header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="images/ITL_logo_white.png" alt="ITL JAPAN" class="logo-img">
-            </a>
-            <nav class="main-nav">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png?v=3" alt="JONATHAN" height="40">
+                </a>
+            </h1>
+            <nav class="main-nav desktop-nav">
                 <ul>
                     <li><a href="news.html">NEWS</a></li>
+                    <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
                     <li><a href="business.html">BUSINESS</a></li>
-                    <li>
+                    <li class="has-dropdown">
                         <a href="company.html">COMPANY</a>
                         <ul class="dropdown-menu">
-                            <li><a href="company/overview.html">OVERVIEW</a></li>
                             <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
+                            <li><a href="company/overview.html">OVERVIEW</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                    <li>
-                        <a href="recruit.html" class="header-recruit-btn">
-                            RECRUIT
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
-                    </li>
+                    <li><a href="#">RECRUIT<span class="external-icon"></span></a></li>
+                    <li><a href="contact.html" class="nav-btn-round">CONTACT</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" aria-label="Menu">
+
+            <!-- Hamburger Button -->
+            <button class="hamburger" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-menu-overlay">
+                <nav class="mobile-nav">
+                    <ul>
+                        <li><a href="index.html">TOP</a></li>
+                        <li><a href="news.html">NEWS</a></li>
+                        <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
+                        <li><a href="business.html">BUSINESS</a></li>
+                        <li><a href="company.html">COMPANY</a></li>
+                        <li><a href="#">RECRUIT</a></li>
+                        <li><a href="contact.html" class="btn-mobile-contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero contact-hero-bg">
-        <div class="page-hero-content">
+    <!-- Fixed Background Canvas -->
+    <div id="canvas-container"></div>
 
-            <h1 class="page-hero-title">CONTACT</h1>
-            <div class="page-hero-sub">
-                お問い合わせ
-            </div>
+    <!-- Hero Section -->
+    <section class="hero recruit-hero">
+        <div class="container hero-container">
+            <h2 class="hero-title">CONTACT</h2>
+            <p class="hero-desc">お問い合わせ</p>
         </div>
     </section>
 
-    <!-- Contact Content -->
-    <section class="section contact-section">
-        <div class="container-narrow">
-            <div class="contact-intro fade-in-section">
-                <p>
-                    当社に関するお問い合わせは、お電話または下記お問い合わせフォームより承っております。<br>
-                </p>
-            </div>
+    <!-- Main Content -->
+    <main class="content" style="padding-bottom: 0;">
+        <div class="container">
 
-            <div class="contact-form-wrapper fade-in-section">
-                <div class="form-header">
-                    <h2>お問い合わせフォーム</h2>
-                    <p class="required-note"><span class="required-mark">必須</span> は必須項目です。</p>
+            <!-- Contact Content -->
+            <section class="section contact-section">
+                <div class="container-narrow">
+                    <div class="contact-intro fade-in-section">
+                        <p>
+                            当社に関するお問い合わせは、お電話または下記お問い合わせフォームより承っております。<br>
+                        </p>
+                    </div>
+
+                    <div class="contact-form-wrapper fade-in-section">
+                        <div class="form-header">
+                            <h2>お問い合わせフォーム</h2>
+                            <p class="required-note"><span class="required-mark">必須</span> は必須項目です。</p>
+                        </div>
+
+                        <form action="mail.php" method="post" class="h-adr">
+                            <span class="p-country-name" style="display:none;">Japan</span>
+
+                            <!-- Inquiry Type -->
+                            <div class="form-group">
+                                <label class="form-label">お問い合わせ件名 <span class="required-mark">必須</span></label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="inquiry_type" value="company" checked>
+                                        <span class="radio-custom"></span>
+                                        会社・事業について
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="inquiry_type" value="ir">
+                                        <span class="radio-custom"></span>
+                                        IR情報について
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="inquiry_type" value="recruit">
+                                        <span class="radio-custom"></span>
+                                        人事・採用窓口について
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="inquiry_type" value="pr">
+                                        <span class="radio-custom"></span>
+                                        PR・広告関連のご連絡
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="inquiry_type" value="property">
+                                        <span class="radio-custom"></span>
+                                        物件紹介
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="inquiry_type" value="other">
+                                        <span class="radio-custom"></span>
+                                        その他
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="form-group">
+                                <label class="form-label" for="message">お問い合わせ内容 <span
+                                        class="required-mark">必須</span></label>
+                                <textarea id="message" name="message" class="form-control" rows="8"
+                                    placeholder="1000文字以内で入力してください。" required></textarea>
+                            </div>
+
+                            <!-- Organization -->
+                            <div class="form-group-row">
+                                <div class="form-group half">
+                                    <label class="form-label" for="company">会社名・団体名 <span
+                                            class="required-mark">必須</span></label>
+                                    <input type="text" id="company" name="company" class="form-control"
+                                        placeholder="例: 株式会社ヨナタン" required>
+                                </div>
+                                <div class="form-group half">
+                                    <label class="form-label" for="department">部署名</label>
+                                    <input type="text" id="department" name="department" class="form-control"
+                                        placeholder="例: 管理本部">
+                                </div>
+                            </div>
+
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label class="form-label">氏名 <span class="required-mark">必須</span></label>
+                                <div class="form-row-inputs">
+                                    <input type="text" name="name_family" class="form-control" placeholder="例: 山田"
+                                        required>
+                                    <input type="text" name="name_given" class="form-control" placeholder="例: 太郎"
+                                        required>
+                                </div>
+                            </div>
+
+                            <!-- Furigana -->
+                            <div class="form-group">
+                                <label class="form-label">氏名（ふりがな） <span class="required-mark">必須</span></label>
+                                <div class="form-row-inputs">
+                                    <input type="text" name="kana_family" class="form-control" placeholder="例: やまだ"
+                                        required>
+                                    <input type="text" name="kana_given" class="form-control" placeholder="例: たろう"
+                                        required>
+                                </div>
+                            </div>
+
+                            <!-- Zip -->
+                            <div class="form-group">
+                                <label class="form-label" for="zip">郵便番号 <span class="required-mark">必須</span></label>
+                                <input type="text" id="zip" name="zip" class="form-control p-postal-code"
+                                    placeholder="例: 1060047 (ハイフン無し)" style="max-width: 200px;" required>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="form-group">
+                                <label class="form-label" for="address">ご住所 <span
+                                        class="required-mark">必須</span></label>
+                                <input type="text" id="address" name="address"
+                                    class="form-control p-region p-locality p-street-address p-extended-address"
+                                    placeholder="例: 東京都港区南麻布2-11-10 OJビル7F" required>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="form-group">
+                                <label class="form-label" for="phone">電話番号 <span class="required-mark">必須</span></label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label class="form-label" for="email">メールアドレス <span
+                                        class="required-mark">必須</span></label>
+                                <input type="email" id="email" name="email" class="form-control"
+                                    placeholder="例: info@jonathan.co.jp" required>
+                            </div>
+
+                            <!-- Confirm Email -->
+                            <div class="form-group">
+                                <label class="form-label" for="email_confirm">メールアドレス（確認） <span
+                                        class="required-mark">必須</span></label>
+                                <input type="email" id="email_confirm" name="email_confirm" class="form-control"
+                                    placeholder="確認のためもう一度ご入力ください" required>
+                            </div>
+
+                            <!-- Privacy Policy -->
+                            <div class="privacy-section">
+                                <p class="privacy-note">下記「個人情報の取り扱いについて」をご確認いただき、同意の上送信してください。</p>
+                                <div class="privacy-box">
+                                    <h4>個人情報の取り扱いについて</h4>
+                                    <p>
+                                        当社の<a href="privacy.html" target="_blank"
+                                            style="text-decoration: underline;">プライバシーポリシー</a>をご確認いただき、同意の上送信してください。
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="form-submit">
+                                <button type="submit" class="btn btn-primary submit-btn">
+                                    上記に同意して送信する
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
+            </section>
 
-                <form action="mail.php" method="post" class="h-adr">
-                    <span class="p-country-name" style="display:none;">Japan</span>
-
-                    <!-- Inquiry Type -->
-                    <div class="form-group">
-                        <label class="form-label">お問い合わせ件名 <span class="required-mark">必須</span></label>
-                        <div class="radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="inquiry_type" value="company" checked>
-                                <span class="radio-custom"></span>
-                                会社・事業について
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="inquiry_type" value="ir">
-                                <span class="radio-custom"></span>
-                                IR情報について
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="inquiry_type" value="recruit">
-                                <span class="radio-custom"></span>
-                                人事・採用窓口について
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="inquiry_type" value="pr">
-                                <span class="radio-custom"></span>
-                                PR・広告関連のご連絡
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="inquiry_type" value="property">
-                                <span class="radio-custom"></span>
-                                物件紹介
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="inquiry_type" value="other">
-                                <span class="radio-custom"></span>
-                                その他
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Message -->
-                    <div class="form-group">
-                        <label class="form-label" for="message">お問い合わせ内容 <span class="required-mark">必須</span></label>
-                        <textarea id="message" name="message" class="form-control" rows="8"
-                            placeholder="1000文字以内で入力してください。" required></textarea>
-                    </div>
-
-                    <!-- Organization -->
-                    <div class="form-group-row">
-                        <div class="form-group half">
-                            <label class="form-label" for="company">会社名・団体名 <span
-                                    class="required-mark">必須</span></label>
-                            <input type="text" id="company" name="company" class="form-control"
-                                placeholder="例: ITL JAPAN株式会社" required>
-                        </div>
-                        <div class="form-group half">
-                            <label class="form-label" for="department">部署名</label>
-                            <input type="text" id="department" name="department" class="form-control"
-                                placeholder="例: 管理本部">
-                        </div>
-                    </div>
-
-                    <!-- Name -->
-                    <div class="form-group">
-                        <label class="form-label">氏名 <span class="required-mark">必須</span></label>
-                        <div class="form-row-inputs">
-                            <input type="text" name="name_family" class="form-control" placeholder="例: 山田" required>
-                            <input type="text" name="name_given" class="form-control" placeholder="例: 太郎" required>
-                        </div>
-                    </div>
-
-                    <!-- Furigana -->
-                    <div class="form-group">
-                        <label class="form-label">氏名（ふりがな） <span class="required-mark">必須</span></label>
-                        <div class="form-row-inputs">
-                            <input type="text" name="kana_family" class="form-control" placeholder="例: やまだ" required>
-                            <input type="text" name="kana_given" class="form-control" placeholder="例: たろう" required>
-                        </div>
-                    </div>
-
-                    <!-- Zip -->
-                    <div class="form-group">
-                        <label class="form-label" for="zip">郵便番号 <span class="required-mark">必須</span></label>
-                        <input type="text" id="zip" name="zip" class="form-control p-postal-code"
-                            placeholder="例: 1060047 (ハイフン無し)" style="max-width: 200px;" required>
-                    </div>
-
-                    <!-- Address -->
-                    <div class="form-group">
-                        <label class="form-label" for="address">ご住所 <span class="required-mark">必須</span></label>
-                        <input type="text" id="address" name="address"
-                            class="form-control p-region p-locality p-street-address p-extended-address"
-                            placeholder="例: 東京都港区南麻布2-11-10 OJビル7F" required>
-                    </div>
-
-                    <!-- Phone -->
-                    <div class="form-group">
-                        <label class="form-label" for="phone">電話番号 <span class="required-mark">必須</span></label>
-                        <input type="tel" id="phone" name="phone" class="form-control"
-                            placeholder="例: 0354399009 (ハイフン無し)" required>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="form-group">
-                        <label class="form-label" for="email">メールアドレス <span class="required-mark">必須</span></label>
-                        <input type="email" id="email" name="email" class="form-control"
-                            placeholder="例: info@itljapan.co.jp" required>
-                    </div>
-
-                    <!-- Confirm Email -->
-                    <div class="form-group">
-                        <label class="form-label" for="email_confirm">メールアドレス（確認） <span
-                                class="required-mark">必須</span></label>
-                        <input type="email" id="email_confirm" name="email_confirm" class="form-control"
-                            placeholder="確認のためもう一度ご入力ください" required>
-                    </div>
-
-                    <!-- Privacy Policy -->
-                    <div class="privacy-section">
-                        <p class="privacy-note">下記「個人情報の取り扱いについて」をご確認いただき、同意の上送信してください。</p>
-                        <div class="privacy-box">
-                            <h4>個人情報の取り扱いについて</h4>
-                            <ul>
-                                <li>お問い合わせの際にご入力いただく個人情報は、以下の通り取り扱います。内容をご確認・ご同意の上、「送信」ボタンを押してください。</li>
-                                <li>利用目的：お問い合わせへの回答、資料送付、および当社サービスのご案内のために利用いたします。</li>
-                                <li>第三者提供・委託：法令に基づく場合を除き、ご本人の同意なく第三者に提供することはありません。また、業務の一部を外部に委託する場合があります。</li>
-                                <li>その他：情報の開示・訂正・削除等の手続き、およびその他の取り扱い詳細については、当社の<a href="privacy.html" target="_blank"
-                                        style="text-decoration: underline;">「プライバシーポリシー」</a>をご確認ください。</li>
-                                <li>必須項目にご入力いただけない場合、回答ができないことがあります。</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Submit -->
-                    <div class="form-submit">
-                        <button type="submit" class="btn btn-primary submit-btn">
-                            上記に同意して送信する
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-
-                </form>
-            </div>
         </div>
-    </section>
+    </main>
 
+    <!-- Breadcrumbs -->
     <!-- Breadcrumbs -->
     <div class="breadcrumbs-footer-wrapper">
         <div class="container header-container">
             <div class="breadcrumbs-footer">
-                <a href="index.html">TOP</a> > CONTACT
+                <a href="index.html">トップ</a> > お問い合わせ
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer id="contact" class="site-footer">
-        <div class="container footer-container">
-            <div class="footer-logo">
-                <img src="images/ITL_logo_white.png" alt="ITL JAPAN" class="footer-logo-img">
-            </div>
-
+    <footer class="site-footer">
+        <div class="container">
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
-                <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">|</span>
                 <a href="sitemap.html">Sitemap</a>
             </div>
-            <small class="copyright">&copy; ITL JAPAN Co., Ltd. All Rights Reserved.</small>
+            <p>&copy; 2026 株式会社ヨナタン. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
