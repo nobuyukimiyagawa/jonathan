@@ -2,130 +2,204 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sitemap | 株式会社ヨナタン</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Google Fonts: Oswald (English Headings), Manrope (English Body), Noto Sans JP -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | ITL JAPAN株式会社</title>
+    <script>
+      (function(d) {
+        var config = {
+          kitId: "rqb6mhw",
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src="https://use.typekit.net/"+config.kitId+".js";tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;500;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .sitemap-content {
+            padding: 80px 0;
+            min-height: 50vh;
+        }
+
+        .sitemap-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .sitemap-group h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 10px;
+            color: var(--color-primary);
+        }
+
+        .sitemap-group ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sitemap-group li {
+            margin-bottom: 15px;
+        }
+
+        .sitemap-group a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .sitemap-group a:hover {
+            color: var(--color-primary);
+        }
+
+        .sitemap-group a::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .sitemap-group a:hover::before {
+            background-color: var(--color-primary);
+        }
+
+        /* Indented sub-items */
+        .sitemap-sub {
+            margin-left: 20px;
+            margin-top: 10px;
+            font-size: 0.95em;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Header: Transparent, Fixed -->
+    <!-- Header -->
     <header class="site-header">
         <div class="container header-container">
-            <h1 class="logo">
-                <a href="index.html">
-                    <img src="assets/images/logo.png?v=3" alt="JONATHAN" height="40">
-                </a>
-            </h1>
-            <nav class="main-nav desktop-nav">
+            <a href="index.html" class="logo">
+                <img src="images/ITL_logo_white.png" alt="ITL JAPAN" class="logo-img">
+            </a>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="news.html">NEWS</a></li>
-                    <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
                     <li><a href="business.html">BUSINESS</a></li>
-                    <li class="has-dropdown">
+                    <li>
                         <a href="company.html">COMPANY</a>
                         <ul class="dropdown-menu">
-                            <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
                             <li><a href="company/overview.html">OVERVIEW</a></li>
+                            <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">RECRUIT<span class="external-icon"></span></a></li>
-                    <li><a href="contact.html" class="nav-btn-round">CONTACT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li>
+                        <a href="recruit.html" class="header-recruit-btn">
+                            RECRUIT
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </li>
                 </ul>
             </nav>
-
-            <!-- Hamburger Button -->
-            <button class="hamburger" aria-label="Menu">
+            <button class="mobile-menu-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-
-            <!-- Mobile Menu Overlay -->
-            <div class="mobile-menu-overlay">
-                <nav class="mobile-nav">
-                    <ul>
-                        <li><a href="index.html">TOP</a></li>
-                        <li><a href="news.html">NEWS</a></li>
-                        <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
-                        <li><a href="business.html">BUSINESS</a></li>
-                        <li><a href="company.html">COMPANY</a></li>
-                        <li><a href="#">RECRUIT</a></li>
-                        <li><a href="contact.html" class="btn-mobile-contact">CONTACT</a></li>
-                    </ul>
-                </nav>
-            </div>
         </div>
     </header>
 
-    <!-- Fixed Background Canvas -->
-    <div id="canvas-container"></div>
-
-    <!-- Hero Section -->
-    <section class="hero recruit-hero">
-        <div class="container hero-container">
-            <h2 class="hero-title">SITEMAP</h2>
-            <p class="hero-desc">サイトマップ</p>
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-color: #1a2b4e;">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">SITEMAP</h1>
+            <div class="page-hero-sub">
+                サイトマップ
+            </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="content">
+    <!-- Sitemap Content -->
+    <section class="section sitemap-content">
         <div class="container">
-            <section class="section sitemap-section">
-                <div class="sitemap-content">
-                    <ul class="sitemap-list">
-                        <li><a href="index.html">TOP</a></li>
-                        <li><a href="news.html">NEWS</a></li>
-                        <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
-                        <li><a href="business.html">BUSINESS</a></li>
+            <div class="sitemap-list fade-in-section">
+
+                <!-- Main Pages -->
+                <div class="sitemap-group">
+                    <h3>MAIN PAGES</h3>
+                    <ul>
+                        <li><a href="index.html">TOP (トップページ)</a></li>
+                        <li><a href="news.html">NEWS (新着情報)</a></li>
+                        <li><a href="business.html">BUSINESS (事業内容)</a></li>
                         <li>
-                            <a href="company.html">COMPANY</a>
-                            <ul>
-                                <li><a href="company/philosophy.html">Philosophy</a></li>
-                                <li><a href="company/overview.html">Overview</a></li>
+                            <a href="company.html">COMPANY (会社情報)</a>
+                            <ul class="sitemap-sub">
+                                <li><a href="company/overview.html">OVERVIEW (会社概要)</a></li>
+                                <li><a href="company/philosophy.html">PHILOSOPHY (企業理念)</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">RECRUIT</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
-                        <li><a href="privacy.html">PRIVACY POLICY</a></li>
-                        <li><a href="sitemap.html">SITEMAP</a></li>
+                        <li><a href="recruit.html">RECRUIT (採用情報)</a></li>
+                        <li><a href="contact.html">CONTACT (お問い合わせ)</a></li>
                     </ul>
                 </div>
-            </section>
+
+                <!-- Others -->
+                <div class="sitemap-group">
+                    <h3>OTHERS</h3>
+                    <ul>
+                        <li><a href="privacy.html">PRIVACY POLICY (プライバシーポリシー)</a></li>
+                        <li><a href="sitemap.html">SITEMAP (サイトマップ)</a></li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
-    </main>
+    </section>
 
     <!-- Breadcrumbs -->
-    <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <div class="container">
-            <ol>
-                <li><a href="index.html">TOP</a></li>
-                <li><span aria-current="page">SITEMAP</span></li>
-            </ol>
+    <div class="breadcrumbs-footer-wrapper">
+        <div class="container header-container">
+            <div class="breadcrumbs-footer">
+                <a href="index.html">TOP</a> > SITEMAP
+            </div>
         </div>
-    </nav>
+    </div>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
+    <footer id="contact" class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="images/ITL_logo_white.png" alt="ITL JAPAN" class="footer-logo-img">
+            </div>
+
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
+                <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">|</span>
                 <a href="sitemap.html">Sitemap</a>
             </div>
-            <p>&copy; 2026 株式会社ヨナタン. All rights reserved.</p>
+            <small class="copyright">&copy; ITL JAPAN Co., Ltd. All Rights Reserved.</small>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

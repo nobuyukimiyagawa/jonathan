@@ -2,180 +2,238 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business | 株式会社ヨナタン</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Google Fonts: Inter  <!-- Google Fonts: Oswald (English Headings), Manrope (English Body), Noto Sans JP -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business | ITL JAPAN株式会社</title>
+    <script>
+      (function(d) {
+        var config = {
+          kitId: "rqb6mhw",
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src="https://use.typekit.net/"+config.kitId+".js";tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;500;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-    <!-- Header: Transparent, Fixed -->
+    <!-- Header -->
     <header class="site-header">
         <div class="container header-container">
-            <h1 class="logo">
-                <a href="index.html">
-                    <img src="assets/images/logo.png?v=3" alt="JONATHAN" height="40">
-                </a>
-            </h1>
-            <nav class="main-nav desktop-nav">
+            <a href="index.html" class="logo">
+                <img src="images/ITL_logo_white.png" alt="ITL JAPAN" class="logo-img">
+            </a>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="news.html">NEWS</a></li>
-                    <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
-                    <li><a href="business.html" class="active">BUSINESS</a></li>
-                    <li class="has-dropdown">
+                    <li><a href="business.html">BUSINESS</a></li>
+                    <li>
                         <a href="company.html">COMPANY</a>
                         <ul class="dropdown-menu">
-                            <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
                             <li><a href="company/overview.html">OVERVIEW</a></li>
+                            <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">RECRUIT<span class="external-icon"></span></a></li>
-                    <li><a href="contact.html" class="nav-btn-round">CONTACT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li>
+                        <a href="recruit.html" class="header-recruit-btn">
+                            RECRUIT
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </li>
                 </ul>
             </nav>
-
-            <!-- Hamburger Button -->
-            <button class="hamburger" aria-label="Menu">
+            <button class="mobile-menu-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-
-            <!-- Mobile Menu Overlay -->
-            <div class="mobile-menu-overlay">
-                <nav class="mobile-nav">
-                    <ul>
-                        <li><a href="index.html">TOP</a></li>
-                        <li><a href="news.html">NEWS</a></li>
-                        <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
-                        <li><a href="business.html">BUSINESS</a></li>
-                        <li><a href="company.html">COMPANY</a></li>
-                        <li><a href="#">RECRUIT</a></li>
-                        <li><a href="contact.html" class="btn-mobile-contact">CONTACT</a></li>
-                    </ul>
-                </nav>
-            </div>
         </div>
     </header>
 
-    <!-- Fixed Background Canvas -->
-    <div id="canvas-container"></div>
+    <!-- Business Page Main Content -->
+    <div class="page-wrapper" style="padding-top: 0;"> <!-- Reset padding for hero overlay -->
 
-    <!-- Hero Section: Static for Subpage -->
-    <section class="hero recruit-hero">
-        <div class="container hero-container">
-            <h2 class="hero-title">BUSINESS</h2>
-            <p class="hero-desc">事業内容</p>
+        <!-- New Hero Section -->
+        <section class="page-hero business-hero-bg">
+            <div class="page-hero-content">
+
+                <h1 class="page-hero-title">BUSINESS</h1>
+                <div class="page-hero-sub">
+                    高度な専門知識とネットワークを活かし、<br>
+                    物流・流通分野における企業価値の最大化をサポートいたします。
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <!-- Content Column (Full Width) -->
+            <div class="container-narrow" id="service-list">
+                <div class="service-list">
+                    <!-- 1. Asset Management Consulting -->
+                    <div class="business-item fade-in-section">
+                        <div class="business-columns">
+                            <div class="business-content">
+                                <div class="business-item-header">
+                                    <span class="business-number">01</span>
+                                    <h3>Asset Management Consulting</h3>
+                                </div>
+                                <p class="business-ja-title">事業起点のアセットマネジメント</p>
+                                <p class="business-desc">
+                                    不動産の物差しだけで測らない。賃料、契約、オペレーション。あらゆる角度からアセットを再定義し、収益力を極大化する。
+                                </p>
+                            </div>
+                            <div class="business-image">
+                                <img src="./images/shutterstock_228516973.jpg" alt="Asset Management Consulting">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Asset Value-up Support -->
+                    <div class="business-item fade-in-section">
+                        <div class="business-columns">
+                            <div class="business-content">
+                                <div class="business-item-header">
+                                    <span class="business-number">02</span>
+                                    <h3>Asset Value-up Support</h3>
+                                </div>
+                                <p class="business-ja-title">ポテンシャルの再構築</p>
+                                <p class="business-desc">
+                                    改修、設備投資、用途変更。中長期的な視点でアセットの物理的・経済的ポテンシャルを分析し、現場に最適化されたバリューアップを。
+                                </p>
+                            </div>
+                            <div class="business-image">
+                                <img src="./images/shutterstock_2691607699.jpg" alt="Asset Value-up Support">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Structured Finance Support -->
+                    <div class="business-item fade-in-section">
+                        <div class="business-columns">
+                            <div class="business-content">
+                                <div class="business-item-header">
+                                    <span class="business-number">03</span>
+                                    <h3>Structured Finance Support</h3>
+                                </div>
+                                <p class="business-ja-title">戦略的な資金・投資スキームの策定</p>
+                                <p class="business-desc">
+                                    キャッシュフロー計画からIRR試算まで。物流・流通アセットに特化した緻密なファイナンス戦略で、投資判断を確かな成功へと導く。
+                                </p>
+                            </div>
+                            <div class="business-image">
+                                <img src="./images/shutterstock_2687470037.jpg" alt="Structured Finance Support">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. M&A & Investment Advisory -->
+                    <div class="business-item fade-in-section">
+                        <div class="business-columns">
+                            <div class="business-content">
+                                <div class="business-item-header">
+                                    <span class="business-number">04</span>
+                                    <h3>Investment Advisory</h3>
+                                </div>
+                                <p class="business-ja-title">アセットから紐解くM&A戦略</p>
+                                <p class="business-desc">
+                                    物理的なデューデリジェンスから、契約条件の精査まで。買収後のアセット戦略・収支構造を見据え、失敗しない統合・投資を支援。
+                                </p>
+                            </div>
+                            <div class="business-image">
+                                <img src="./images/shutterstock_2301850975.jpg" alt="Investment Advisory">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Structuring & Contract Design -->
+                    <div class="business-item fade-in-section">
+                        <div class="business-columns">
+                            <div class="business-content">
+                                <div class="business-item-header">
+                                    <span class="business-number">05</span>
+                                    <h3>Structuring & Contract Design</h3>
+                                </div>
+                                <p class="business-ja-title">実務に即した契約の精密設計</p>
+                                <p class="business-desc">
+                                    売買、賃貸借、業務委託。専門家チームと連携し、投資・運営の実態に即した「隙のない」ストラクチャーを構築する。
+                                </p>
+                            </div>
+                            <div class="business-image">
+                                <img src="./images/shutterstock_2671588771.jpg" alt="Structuring & Contract Design">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Management & Group Support -->
+                    <div class="business-item fade-in-section">
+                        <div class="business-columns">
+                            <div class="business-content">
+                                <div class="business-item-header">
+                                    <span class="business-number">06</span>
+                                    <h3>Management & Group Support</h3>
+                                </div>
+                                <p class="business-ja-title">グループ経営の基盤強化</p>
+                                <p class="business-desc">
+                                    資金管理からマーケティング分析、事業再構築まで。オペレーションの視点を持つコンサルタントとして、グループ全体の経営精度を高める。
+                                </p>
+                            </div>
+                            <div class="business-image">
+                                <img src="./images/shutterstock_2557976849.jpg" alt="Management & Group Support">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Link Section -->
+    <section class="section section-cta">
+        <div class="container">
+            <h2>お問い合わせ</h2>
+            <p>事業に関するご相談・ご質問はこちらからお問い合わせください。</p>
+            <a href="contact.html" class="btn btn-primary">CONTACT</a>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <!-- Main Content -->
-    <main class="content">
-        <div class="container">
-
-            <!-- Services Section -->
-            <section class="section services-section">
-                <div class="section-header">
-                    <h2 class="section-title" style="font-weight: 700;">物流コンサルティングで、ビジネスを加速させる。</h2>
-                </div>
-                <div class="services-grid">
-                    <!-- Card 1 -->
-                    <div class="service-card vuild-card">
-                        <span class="service-num">01</span>
-                        <h3 class="service-heading">Operation Consulting</h3>
-                        <p class="service-jp">現場起点の、実行型コンサルティング</p>
-                        <div class="service-details">
-                            <p>現場の呼吸を感じ、KPIを設計し、ボトルネックを根絶する。ヒアリングと実地調査に基づいた、嘘のない改善を。</p>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="service-card vuild-card">
-                        <span class="service-num">02</span>
-                        <h3 class="service-heading">Logistics Design</h3>
-                        <p class="service-jp">拡張し続ける、物流の設計図</p>
-                        <div class="service-details">
-                            <p>レイアウト、動線、人員配置。M&Aや急成長を見据え、変化に強くスケーラブルなオペレーションを構築する。</p>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="service-card vuild-card">
-                        <span class="service-num">03</span>
-                        <h3 class="service-heading">IT & DX Strategy</h3>
-                        <p class="service-jp">「現場に馴染む」システム実装</p>
-                        <div class="service-details">
-                            <p>システムに業務を合わせない。業務を加速させるためのシステムを。要件定義からPMまで、現場ファーストのDXを支援。</p>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="service-card vuild-card">
-                        <span class="service-num">04</span>
-                        <h3 class="service-heading">System Development</h3>
-                        <p class="service-jp">物流特化型のツール・企画</p>
-                        <div class="service-details">
-                            <p>実務に特化した管理ダッシュボードや効率化ツールの企画。外部ベンダーを統制し、理想のIT環境を具現化。</p>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="service-card vuild-card">
-                        <span class="service-num">05</span>
-                        <h3 class="service-heading">M&A & Business Restructuring</h3>
-                        <p class="service-jp">物流から変える、M&Aと事業再生</p>
-                        <div class="service-details">
-                            <p>事業DDからPMI（統合プロセス）まで。物流効率とコスト構造を徹底分析し、統合後の企業価値を最大化する。</p>
-                        </div>
-                    </div>
-
-                    <!-- Card 6 -->
-                    <div class="service-card vuild-card">
-                        <span class="service-num">06</span>
-                        <h3 class="service-heading">Management Asset Support</h3>
-                        <p class="service-jp">アセットを最適化する経営支援</p>
-                        <div class="service-details">
-                            <p>契約条件の整理から物流不動産の活用、グループの資金管理まで。オペレーションの視点から、経営基盤を強固にする。</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
     <!-- Breadcrumbs -->
-    <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <div class="container">
-            <ol>
-                <li><a href="index.html">TOP</a></li>
-                <li><span aria-current="page">BUSINESS</span></li>
-            </ol>
-        </div>
-    </nav>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="sitemap.html">Sitemap</a>
+    <div class="breadcrumbs-footer-wrapper">
+        <div class="container header-container"> <!-- Reuse container for alignment -->
+            <div class="breadcrumbs-footer">
+                <a href="index.html">TOP</a> > BUSINESS
             </div>
         </div>
-        <p>&copy; 2026 株式会社ヨナタン. All rights reserved.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="images/ITL_logo_white.png" alt="ITL JAPAN" class="footer-logo-img">
+            </div>
+
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">|</span>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <small class="copyright">&copy; ITL JAPAN Co., Ltd. All Rights Reserved.</small>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
