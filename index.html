@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>株式会社ヨナタン</title>
+  <link rel="icon" type="image/png" href="assets/images/jonathan_favicon.png">
+  <meta name="description" content="株式会社ヨナタンの公式サイトです。戦略を、物流の体温に変える。徹底的な現場主義とデータ分析を融合させ、ビジネスに「正解」を導き出します。">
+  <meta name="keywords" content="株式会社ヨナタン,物流コンサルティング,Logistics Design,IT & DX Strategy,System Development,M&A">
+  <meta property="og:title" content="株式会社ヨナタン | BEYOND STRATEGY">
+  <meta property="og:description" content="戦略を、物流の体温に変える。徹底的な現場主義とデータ分析を融合させ、ビジネスに「正解」を導き出します。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://yonatan.tokyo/">
+  <meta property="og:image" content="assets/images/jonathan_logo_ogp.png">
+  <link rel="stylesheet" href="css/style.css?v=27" />
+  <!-- Google Fonts: Oswald (English Headings), Manrope (English Body), Noto Sans JP, Shippori Mincho (Philosophy) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="home-page">
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <div class="splash-content">
+      <p class="splash-text">BEYOND STRATEGY</p>
+    </div>
+  </div>
+
+  <!-- Header: Transparent, Fixed -->
+  <header class="site-header">
+    <div class="container header-container">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="assets/images/logo.png?v=3" alt="JONATHAN" height="40">
+        </a>
+      </h1>
+      <nav class="main-nav desktop-nav">
+        <ul>
+          <li><a href="news.html">NEWS</a></li>
+          <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
+          <li><a href="business.html">BUSINESS</a></li>
+          <li class="has-dropdown">
+            <a href="company.html">COMPANY</a>
+            <ul class="dropdown-menu">
+              <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
+              <li><a href="company/overview.html">OVERVIEW</a></li>
+            </ul>
+          </li>
+          <li><a href="#">RECRUIT<span class="external-icon"></span></a></li>
+          <li><a href="contact.html" class="nav-btn-round">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay">
+        <nav class="mobile-nav">
+          <ul>
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="company/philosophy.html">PHILOSOPHY</a></li>
+            <li><a href="business.html">BUSINESS</a></li>
+            <li><a href="company.html">COMPANY</a></li>
+            <li><a href="#">RECRUIT</a></li>
+            <li><a href="contact.html" class="btn-mobile-contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fixed Background Canvas -->
+  <div id="canvas-container"></div>
+
+  <!-- Hero Section: Scrollable Content with Text Transitions -->
+  <section class="hero">
+    <div class="hero-scroll-wrapper">
+
+      <!-- Slide 1: Main Title -->
+      <div class="hero-slide slide-1 visible">
+        <div class="container hero-container">
+          <h3 class="hero-title hero-title-style">戦略を、物流の体温に変える。</h3>
+          <h4 class="hero-desc hero-desc-style">
+            Moving the Ground, Accelerating the Business.
+          </h4>
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <!-- Main Content: White Cards on Beige -->
+  <!-- Main Content: White Cards on Beige -->
+  <main class="content">
+    <div class="container">
+
+      <!-- News Section -->
+      <section class="section news-section" id="news">
+        <div class="section-header">
+          <h2 class="section-title">NEWS</h2>
+          <a href="news.html" class="header-view-all">VIEW MORE<span class="arrow-circle">→</span></a>
+        </div>
+        <div class="news-list-container">
+          <ul class="news-list-minimal">
+            <li class="news-item">
+              <a href="news_details.html">
+                <span class="news-date">2026.02.03</span>
+                <span class="news-category">Update</span>
+                <span class="news-title">ホームページリニューアル</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Philosophy Teaser -->
+      <section class="section philosophy-section relative-hidden" id="philosophy">
+        <div class="z-index-1">
+          <div class="section-header text-center mb-4rem">
+            <h2 class="section-title">Philosophy</h2>
+            <a href="company/philosophy.html" class="header-view-all">VIEW MORE<span class="arrow-circle">→</span></a>
+          </div>
+
+          <div class="philosophy-content">
+            <h3 class="philo-main-text">
+              現場と数字を、正解にする。
+            </h3>
+            <p class="philo-sub-text">
+              私たちは、机上の空論ではなく、徹底的な現場主義とデータ分析を融合させ、ビジネスに「正解」を導き出します。<br>
+              物流を単なるコストセンターではなく、経営を加速させる競争力へ。<br>
+              お客様と共に汗をかき、次世代へ続くインフラを構築します。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Teaser (Business) -->
+      <section class="section services-section" id="business">
+        <div class="section-header">
+          <h2 class="section-title">Business</h2>
+          <a href="business.html" class="header-view-all">VIEW MORE <span class="arrow-circle">→</span></a>
+        </div>
+        <div class="services-teaser">
+          <div class="business-grid">
+            <!-- 1. Operation Consulting -->
+            <div class="business-card">
+              <h3 class="business-card-title">Operation Consulting</h3>
+              <p class="business-card-jp">現場起点の、実行型コンサルティング</p>
+              <p class="business-card-desc">
+                現場の呼吸を感じ、KPIを設計し、ボトルネックを根絶する。ヒアリングと実地調査に基づいた、嘘のない改善を。
+              </p>
+            </div>
+
+            <!-- 2. Logistics Design -->
+            <div class="business-card">
+              <h3 class="business-card-title">Logistics Design</h3>
+              <p class="business-card-jp">拡張し続ける、物流の設計図</p>
+              <p class="business-card-desc">
+                レイアウト、動線、人員配置。M&Aや急成長を見据え、変化に強くスケーラブルなオペレーションを構築する。
+              </p>
+            </div>
+
+            <!-- 3. IT & DX Strategy -->
+            <div class="business-card">
+              <h3 class="business-card-title">IT & DX Strategy</h3>
+              <p class="business-card-jp">「現場に馴染む」システム実装</p>
+              <p class="business-card-desc">
+                システムに業務を合わせない。業務を加速させるためのシステムを。要件定義からPMまで、現場ファーストのDXを支援。
+              </p>
+            </div>
+
+            <!-- 4. System Development -->
+            <div class="business-card">
+              <h3 class="business-card-title">System Development</h3>
+              <p class="business-card-jp">物流特化型のツール・企画</p>
+              <p class="business-card-desc">
+                実務に特化した管理ダッシュボードや効率化ツールの企画。外部ベンダーを統制し、理想のIT環境を具現化。
+              </p>
+            </div>
+
+            <!-- 5. M&A & Business Restructuring -->
+            <div class="business-card">
+              <h3 class="business-card-title">M&A & Restructuring</h3>
+              <p class="business-card-jp">物流から変える、M&Aと事業再生</p>
+              <p class="business-card-desc">
+                事業DDからPMI（統合プロセス）まで。物流効率とコスト構造を徹底分析し、統合後の企業価値を最大化する。
+              </p>
+            </div>
+
+            <!-- 6. Management Asset Support -->
+            <div class="business-card">
+              <h3 class="business-card-title">Management Asset Support</h3>
+              <p class="business-card-jp">アセットを最適化する経営支援</p>
+              <p class="business-card-desc">
+                契約条件の整理から物流不動産の活用、グループの資金管理まで。オペレーションの視点から、経営基盤を強固にする。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Company Teaser -->
+      <section class="section company-teaser" id="company">
+        <div class="section-header">
+          <h2 class="section-title">Company</h2>
+          <a href="company.html" class="header-view-all">VIEW MORE<span class="arrow-circle">→</span></a>
+        </div>
+        <div class="company-split-layout">
+          <div class="company-logo-area">
+            <img src="assets/images/logo.png" alt="Jonathan Logo" class="company-section-logo">
+          </div>
+          <div class="company-desc-area">
+            <p class="teaser-desc">
+              私たちは、物流・流通の現場に深く入り込み、<br>
+              実効性のある戦略とオペレーションを構築する集団です。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Recruit (Side by Side) -->
+      <section class="section cta-section" id="contact-recruit">
+        <div class="cta-wrapper">
+
+          <!-- Contact Card -->
+          <div class="cta-card" id="contact">
+            <div class="card-content">
+              <h2 class="cta-title">Contact</h2>
+              <p class="cta-text">
+                事業に関するご相談、採用に関するご質問など、お気軽にお問い合わせください。
+              </p>
+              <a href="contact.html" class="btn-cta">CONTACT FORM <span class="arrow-circle">→</span></a>
+            </div>
+          </div>
+
+          <!-- Recruit Card -->
+          <div class="cta-card" id="recruit">
+            <div class="card-content">
+              <h2 class="cta-title">Recruit</h2>
+              <p class="cta-text">
+                共に未来を実装する仲間を<br>募集しています。
+              </p>
+              <a href="contact.html" class="btn-cta">RECRUIT PAGE <span class="arrow-circle">→</span></a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><span aria-current="page">TOP</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="sitemap.html">Sitemap</a>
+      </div>
+      <p>&copy; 2026 株式会社ヨナタン. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
