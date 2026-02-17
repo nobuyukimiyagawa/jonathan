@@ -4,7 +4,7 @@ mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 
 // Configuration
-$to_admin = "nobuyuki.miyagawa14@gmail.com";
+$to_admin = "info@navigatoria.jp";
 $subject_admin = "【株式会社ヨナタン】お問い合わせがありました";
 
 
