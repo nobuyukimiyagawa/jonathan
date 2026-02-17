@@ -2246,6 +2246,80 @@ body {
   opacity: 1;
 }
 
+/* Contact Form Styles (Moved from contact.html) */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.submit-button {
+  background-color: #262523;
+  color: #fff;
+  border: 1px solid #262523;
+  padding: 1rem 3rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: transparent;
+  color: #262523;
+}
+
 .dropdown-menu li:last-child a {
   border-bottom: none;
+}
+/* News Detail Styles (Moved from news_details.html) */
+.news-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+}
+
+.news-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.news-detail-content {
+    line-height: 2;
+    color: #555;
+}
+
+.news-detail-content p {
+    margin-bottom: 1.5rem;
 }
