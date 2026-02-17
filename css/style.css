@@ -622,7 +622,6 @@ body {
   opacity: 0.6;
 }
 
-/* Circle Arrow */
 .arrow-circle {
   display: inline-flex;
   align-items: center;
@@ -632,8 +631,12 @@ body {
   border: 1px solid #262523;
   border-radius: 50%;
   font-size: 0.8rem;
-  line-height: 1;
-  padding-bottom: 2px;
+  line-height: normal;
+  /* Use normal to respect font metrics, or 1 if needed */
+  padding: 0;
+  /* Remove padding for true center */
+  margin-left: 0.5rem;
+  /* Add margin for spacing from text */
 }
 
 .section-desc-vertical {
