@@ -63,7 +63,10 @@ EOD;
 
 
     // Send Email to Admin
-    $headers_admin = "From: {$email}";
+    // 送信元をサーバのドメインのメールアドレスに固定（迷惑メール判定回避のため）
+    // ※これは管理者宛のメール設定です。お客様（お問い合わせした方）には送信されません。
+    $headers_admin = "From: info@jonathan-site.com\r\n";
+    $headers_admin .= "Reply-To: {$email}";
     mb_send_mail($to_admin, $subject_admin, $body_admin, $headers_admin);
 
 
