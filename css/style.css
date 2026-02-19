@@ -105,6 +105,10 @@ a {
     padding-left: 0;
   }
 
+  .logo img {
+    height: 40px;
+  }
+
   /* Hide Desktop Nav */
   .desktop-nav {
     display: none;
@@ -219,59 +223,59 @@ a {
 
   /* Specific styles for the trigger to add an arrow */
   /* Specific styles for the trigger to add a circle arrow */
+  /* Specific styles for the trigger to add a circle arrow */
   .mobile-nav .accordion-trigger {
+    /* Reset functionality styles */
     position: relative;
-    /* Remove padding-right as we use absolute positioning near text */
     padding-right: 0;
   }
 
-  /* The Circle */
-  .mobile-nav .accordion-trigger::after {
-    content: '';
-    position: absolute;
-    top: 4px;
-    /* Align with 'COMPANY' text (1.5rem ~ 24px) */
-    left: 10rem;
-    /* Position next to COMPANY text. Approx 160px */
+  /* Wrapper for English text to align icon */
+  .mobile-nav .trigger-en {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    /* Space between text and icon */
+  }
+
+  /* The Arrow - Icon Structure:
+     .accordion-icon is the circle (border).
+     .accordion-icon::after is the arrow.
+  */
+
+  .mobile-nav .accordion-icon {
+    display: block;
     width: 20px;
     height: 20px;
     border: 1px solid #262523;
     border-radius: 50%;
     box-sizing: border-box;
-    /* Reset old arrow styles */
-    border-right: 1px solid #262523;
-    border-bottom: 1px solid #262523;
-    transform: none;
-    transition: none;
+    position: relative;
+    transition: transform 0.3s ease;
   }
 
-  /* The Arrow */
-  .mobile-nav .accordion-trigger::before {
+  .mobile-nav .accordion-icon::after {
     content: '';
     position: absolute;
-    top: 9px;
-    /* Centered in circle (Top 4 + 10 - 3 - 2ish) */
-    left: 10.4rem;
-    /* Centered in circle (Left 10rem + 10px - 3px) */
+    top: 50%;
+    left: 50%;
     width: 6px;
     height: 6px;
     border-right: 1px solid #262523;
     border-bottom: 1px solid #262523;
-    transform: rotate(45deg);
-    transition: transform 0.3s ease;
-    z-index: 2;
+    transform: translate(-50%, -65%) rotate(45deg);
+    /* Centering tweaks */
   }
 
-  /* Active State - Rotate Arrow */
-  .mobile-nav .accordion-trigger.active::before {
-    transform: rotate(225deg);
-    top: 11px;
-    /* Adjust for visual center when rotated */
-  }
-
-  /* Active State - Circle (No change) */
-  .mobile-nav .accordion-trigger.active::after {
-    transform: none;
+  /* Active State */
+  .mobile-nav .accordion-trigger.active .accordion-icon {
+    /* Rotate the whole icon (circle + arrow) for effect, or just arrow? 
+         User request: Arrow "V". 
+         Usually "V" turns to "^".
+         Rotating the specific arrow looks best, but rotating the whole circle is easier if it's uniform.
+         Let's rotate the whole icon 180deg.
+      */
+    transform: rotate(180deg);
   }
 
   .mobile-nav .ja-label {
@@ -2457,4 +2461,12 @@ body {
 
 .news-detail-content p {
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+
+  /* Remove huge bottom padding from content wrapper on mobile */
+  .content {
+    padding: 0 !important;
+  }
 }
