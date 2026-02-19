@@ -56,6 +56,20 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.remove('active');
       });
     });
+
+    // Mobile Accordion Logic (Re-implemented)
+    const accordionToggles = document.querySelectorAll('.accordion-trigger');
+    accordionToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        // e.preventDefault(); // Not needed if using span, but good practice if a tag
+        e.stopPropagation();
+
+        const submenu = toggle.parentElement.nextElementSibling;
+
+        toggle.classList.toggle('active');
+        submenu.classList.toggle('active');
+      });
+    });
   }
 });
 

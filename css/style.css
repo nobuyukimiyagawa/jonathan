@@ -204,20 +204,154 @@ a {
     /* Align flex items to start */
   }
 
-  .mobile-nav a {
+  .mobile-nav a,
+  .mobile-nav .accordion-trigger {
     font-size: 1.5rem;
     font-weight: 500;
     color: #262523;
     letter-spacing: 0.1em;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    cursor: pointer;
+    text-decoration: none;
   }
 
-  .btn-mobile-contact {
-    display: inline-block;
-    border: 1px solid #262523;
-    padding: 0.8rem 2rem;
-    margin-top: 1rem;
-    border-radius: 999px;
+  /* Specific styles for the trigger to add an arrow */
+  /* Specific styles for the trigger to add a circle arrow */
+  .mobile-nav .accordion-trigger {
+    position: relative;
+    /* Remove padding-right as we use absolute positioning near text */
+    padding-right: 0;
   }
+
+  /* The Circle */
+  .mobile-nav .accordion-trigger::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    /* Align with 'COMPANY' text (1.5rem ~ 24px) */
+    left: 10rem;
+    /* Position next to COMPANY text. Approx 160px */
+    width: 20px;
+    height: 20px;
+    border: 1px solid #262523;
+    border-radius: 50%;
+    box-sizing: border-box;
+    /* Reset old arrow styles */
+    border-right: 1px solid #262523;
+    border-bottom: 1px solid #262523;
+    transform: none;
+    transition: none;
+  }
+
+  /* The Arrow */
+  .mobile-nav .accordion-trigger::before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    /* Centered in circle (Top 4 + 10 - 3 - 2ish) */
+    left: 10.4rem;
+    /* Centered in circle (Left 10rem + 10px - 3px) */
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid #262523;
+    border-bottom: 1px solid #262523;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    z-index: 2;
+  }
+
+  /* Active State - Rotate Arrow */
+  .mobile-nav .accordion-trigger.active::before {
+    transform: rotate(225deg);
+    top: 11px;
+    /* Adjust for visual center when rotated */
+  }
+
+  /* Active State - Circle (No change) */
+  .mobile-nav .accordion-trigger.active::after {
+    transform: none;
+  }
+
+  .mobile-nav .ja-label {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  /* Submenu - Hidden by default */
+  .mobile-submenu {
+    display: block;
+    width: 100%;
+    padding-left: 1rem;
+    margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+  }
+
+  .mobile-submenu.active {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 2rem;
+  }
+
+  .mobile-submenu li {
+    margin-bottom: 0;
+  }
+
+  .mobile-submenu a {
+    font-size: 1rem;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    line-height: 1.2;
+  }
+
+  .mobile-submenu .ja-label {
+    font-size: 0.7rem;
+    margin-top: 2px;
+  }
+
+  /* Add arrow icon to sub-items - Apply to the link itself or wrapper? 
+     Previously: .mobile-submenu a::before { content: "- "; }
+     If a is flex column, ::before might look weird if it's not positioned correctly.
+     Let's keep it simple. If I use flex column, ::before is visually the first item in the column? No, pseudo-elements are children.
+     ::before (dash) -> span (ENG) -> span (JP).
+     We want " - PHILOSOPHY \n 企業理念 " ? Or " - PHILOSOPHY " and "   企業理念 "? 
+     Let's try to keep the dash inline with English text if possible, or just remove it if it complicates things.
+     User didn't ask for dash specifically, but it was there.
+     Let's put the EN text and Dash in a separate span? Or just let the Dash be top left.
+  */
+  .mobile-submenu a::before {
+    content: "- ";
+    margin-right: 5px;
+    display: none;
+    /* Hide dash for now as it complicates flex layout with subtitles, or handle carefully */
+  }
+
+  /* Alternative: Put Dash in the English text directly in HTML? Or styling. 
+     Let's remove the dash for cleaner look with subtitles, or re-add it if user complains. 
+     Actually, let's keep it but maybe as part of the English line? 
+     If a is flex-direction: column, ::before is the first child.
+     So it will be: 
+     - 
+     PHILOSOPHY
+     企業理念
+     
+     That's bad. 
+     
+     I will wrap the English text in a span in HTML, and attach ::before to that span? 
+     Or just ignore the dash. Dash was added in previous step. 
+     "Philosophy, Overviewはちゃんと上下の要素と等間隔にしてください" was the previous request.
+     
+     I'll remove the CSS generated dash and maybe add it to HTML if really needed, but simplest is to remove it for a clean bilingual look.
+  */
 }
 
 .main-nav a {
@@ -2301,25 +2435,26 @@ body {
 .dropdown-menu li:last-child a {
   border-bottom: none;
 }
+
 /* News Detail Styles (Moved from news_details.html) */
 .news-header {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 2rem;
-    margin-bottom: 3rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .news-meta {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-    align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
 }
 
 .news-detail-content {
-    line-height: 2;
-    color: #555;
+  line-height: 2;
+  color: #555;
 }
 
 .news-detail-content p {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
